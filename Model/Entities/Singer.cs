@@ -21,9 +21,8 @@ namespace YourSound
             Image = new byte[0];
         }
 
-        public Singer(int id, string name, string description, byte[] image)
+        public Singer(string name, string description, byte[] image)
         {
-            ID = id;
             Name = name;
             Description = description;
             Image = image;

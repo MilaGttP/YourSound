@@ -19,9 +19,8 @@ namespace YourSound
             Image = new byte[0];
         }
 
-        public Album(int id, string name, byte[] image)
+        public Album(string name, byte[] image)
         {
-            ID = id;
             Name = name;
             Image = image;
         }

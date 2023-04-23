@@ -19,9 +19,8 @@ namespace YourSound
             Image = new byte[0];
         }
 
-        public Chord(int id, string name, byte[] image)
+        public Chord(string name, byte[] image)
         {
-            ID = id;
             Name = name;
             Image = image;
         }

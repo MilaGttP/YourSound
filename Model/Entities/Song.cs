@@ -31,9 +31,8 @@ namespace YourSound
             Image = new byte[0];
         }
 
-        public Song(int iD, string name, string text, string genre, string mood, bool isStrum, string strumOrParts, string url, byte[] image)
+        public Song(string name, string text, string genre, string mood, bool isStrum, string strumOrParts, string url, byte[] image)
         {
-            ID = iD;
             Name = name;
             Text = text;
             Genre = genre;

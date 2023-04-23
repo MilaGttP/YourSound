@@ -25,9 +25,8 @@ namespace YourSound
             Image = new byte[0];
         }
 
-        public Account(int id, string fullName, string userName, string email, string password, byte[] image)
+        public Account(string fullName, string userName, string email, string password, byte[] image)
         {
-            ID = id;
             FullName = fullName;
             UserName = userName;
             Email = email;
