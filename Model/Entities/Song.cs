@@ -30,17 +30,5 @@ namespace YourSound
             Url = string.Empty;
             Image = new byte[0];
         }
-
-        public Song(string name, string text, string genre, string mood, bool isStrum, string strumOrParts, string url, byte[] image)
-        {
-            Name = name;
-            Text = text;
-            Genre = genre;
-            Mood = mood;
-            IsStrum = isStrum;
-            StrumOrParts = strumOrParts;
-            Url = url;
-            Image = image;
-        }
     }
 }

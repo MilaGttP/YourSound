@@ -20,12 +20,5 @@ namespace YourSound
             Description = string.Empty;
             Image = new byte[0];
         }
-
-        public Singer(string name, string description, byte[] image)
-        {
-            Name = name;
-            Description = description;
-            Image = image;
-        }
     }
 }

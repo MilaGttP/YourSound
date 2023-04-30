@@ -24,14 +24,5 @@ namespace YourSound
             Password = string.Empty;
             Image = new byte[0];
         }
-
-        public Account(string fullName, string userName, string email, string password, byte[] image)
-        {
-            FullName = fullName;
-            UserName = userName;
-            Email = email;
-            Password = password;
-            Image = image;
-        }
     }
 }

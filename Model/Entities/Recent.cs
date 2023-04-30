@@ -10,19 +10,13 @@ namespace YourSound
     {
         public int ID { get; set; }
         public int AccountID { get; set; }
-        public int SingerSongID { get; set; }
-
-        public virtual Account Account { get; set; }
-        public virtual SingerSong SingerSong { get; set; }
+        public int SongID { get; set; }
 
         public Recent()
         {
             ID = 0;
             AccountID = 0;
-            SingerSongID = 0;
-            Account = new Account();
-            SingerSong = new SingerSong();
+            SongID = 0;
         }
-
     }
 }

@@ -18,11 +18,5 @@ namespace YourSound
             Name = string.Empty;
             Image = new byte[0];
         }
-
-        public Chord(string name, byte[] image)
-        {
-            Name = name;
-            Image = image;
-        }
     }
 }
