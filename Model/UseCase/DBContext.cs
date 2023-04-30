@@ -1,11 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace YourSound
 {
@@ -19,6 +15,7 @@ namespace YourSound
         public DbSet<ChordsSong> ChordsSong { get; set; }
         public DbSet<Recent> Recent { get; set; }
         public DbSet<Saved> Saved { get; set; }
+        public DbSet<SingerSong> SingerSong { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder();
