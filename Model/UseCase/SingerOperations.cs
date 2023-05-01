@@ -1,8 +1,10 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace YourSound
 {
@@ -10,26 +12,42 @@ namespace YourSound
     {
         public static async Task<List<Album>> GetSingerAlbums(string singerName)
         {
-            using (var dbContext = new DBContext())
+            try
             {
-                var albums = await dbContext.SingerSong
-                    .Where(ss => ss.Singer.Name == singerName)
-                    .Select(ss => ss.Album)
-                    .ToListAsync();
+                using (var dbContext = new DBContext())
+                {
+                    var albums = await dbContext.SingerSong
+                        .Where(ss => ss.Singer.Name == singerName)
+                        .Select(ss => ss.Album)
+                        .ToListAsync();
 
-                return albums;
+                    return albums;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
             }
         }
         public static async Task<List<Song>> GetSingerSongs(string singerName)
         {
-            using (var dbContext = new DBContext())
+            try
             {
-                var songs = await dbContext.SingerSong
-                    .Where(ss => ss.Singer.Name == singerName)
-                    .Select(ss => ss.Song)
-                    .ToListAsync();
+                using (var dbContext = new DBContext())
+                {
+                    var songs = await dbContext.SingerSong
+                        .Where(ss => ss.Singer.Name == singerName)
+                        .Select(ss => ss.Song)
+                        .ToListAsync();
 
-                return songs;
+                    return songs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
             }
         }
     }

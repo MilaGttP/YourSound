@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace YourSound
 {
@@ -9,9 +11,17 @@ namespace YourSound
     {
         public static async Task<List<Chord>> GetAllChords()
         {
-            using (DBContext dbContext = new DBContext())
+            try
             {
-                return await dbContext.Chord.ToListAsync();
+                using (DBContext dbContext = new DBContext())
+                {
+                    return await dbContext.Chord.ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
             }
         }
     }
