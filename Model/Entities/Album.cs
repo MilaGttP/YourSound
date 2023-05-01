@@ -7,6 +7,7 @@ namespace YourSound
         public string Name { get; set; }
         public byte[] Image { get; set; }
         public int Year { get; set; }
+        public string Genre { get; set; }
 
         public Album() 
         { 
@@ -14,6 +15,7 @@ namespace YourSound
             Name = string.Empty;
             Image = new byte[0];
             Year = 0;
+            Genre = string.Empty;
         }
     }
 }
