@@ -119,29 +119,15 @@ namespace YourSound
         {
             try
             {
-                DBContext dBContext = new DBContext();
-                List<int> topSongIds = new List<int>();
+                using (var dbContext = new DBContext())
+                {
+                    var topSongs = await dbContext.Song
+                        .OrderByDescending(s => s.Popularity)
+                        .Take(quantity)
+                        .ToListAsync();
 
-                List<int> savedSongIds = await dBContext.Saved.GroupBy(x => x.SongID)
-                                                       .Select(g => new { SongId = g.Key, Count = g.Count() })
-                                                       .OrderByDescending(x => x.Count)
-                                                       .Take(quantity)
-                                                       .Select(x => x.SongId)
-                                                       .ToListAsync();
-
-                List<int> recentSongIds = await dBContext.Recent.GroupBy(x => x.SongID)
-                                                         .Select(g => new { SongId = g.Key, Count = g.Count() })
-                                                         .OrderByDescending(x => x.Count)
-                                                         .Take(quantity)
-                                                         .Select(x => x.SongId)
-                                                         .ToListAsync();
-
-                topSongIds.AddRange(savedSongIds);
-                topSongIds.AddRange(recentSongIds);
-
-                List<Song> topSongs = await dBContext.Song.Where(s => topSongIds.Contains(s.ID)).ToListAsync();
-
-                return topSongs;
+                    return topSongs;
+                }
             }
             catch (Exception ex)
             {

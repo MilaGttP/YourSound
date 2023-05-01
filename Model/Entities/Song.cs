@@ -12,6 +12,7 @@ namespace YourSound
         public string StrumOrParts { get; set; }
         public string Url { get; set; }
         public byte[] Image { get; set; }
+        public int Popularity { get; set; }
 
         public Song()
         {
@@ -24,6 +25,7 @@ namespace YourSound
             StrumOrParts = string.Empty;
             Url = string.Empty;
             Image = new byte[0];
+            Popularity = 0;
         }
     }
 }

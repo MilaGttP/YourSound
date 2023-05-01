@@ -7,14 +7,11 @@ namespace YourSound
 {
     public class DBContext : DbContext
     {
-        public DbSet<Account> Account { get; set; }
         public DbSet<Album> Album { get; set; }
         public DbSet<Chord> Chord { get; set; }
         public DbSet<Singer> Singer { get; set; }
         public DbSet<Song> Song { get; set; }
         public DbSet<ChordsSong> ChordsSong { get; set; }
-        public DbSet<Recent> Recent { get; set; }
-        public DbSet<Saved> Saved { get; set; }
         public DbSet<SingerSong> SingerSong { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
