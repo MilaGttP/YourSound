@@ -1,0 +1,9 @@
+﻿
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="ExtraBold">/Fonts/Montserrat-ExtraBold.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="SemiBold">/Fonts/Montserrat-SemiBold.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="Light">/Fonts/Montserrat-Light.ttf#Montserrat</FontFamily>
+
+</ResourceDictionary>
