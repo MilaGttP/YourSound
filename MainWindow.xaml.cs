@@ -20,6 +20,11 @@ namespace YourSound
         public MainWindow()
         {
             InitializeComponent();
+
+            double screenWidth = SystemParameters.PrimaryScreenWidth;
+            double screenHeight = SystemParameters.PrimaryScreenHeight;
+            this.Width = screenWidth * 0.8; 
+            this.Height = screenHeight * 0.8;
         }
     }
 }

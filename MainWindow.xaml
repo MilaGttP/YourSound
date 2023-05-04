@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YourSound"
         mc:Ignorable="d"
-        Title="MainWindow" Width="800" Height="450">
+        Title="MainWindow" Width="800" Height="450" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MainWindowStyle}">
     <Grid>
-
+        
     </Grid>
 </Window>
