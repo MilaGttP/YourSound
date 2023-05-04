@@ -6,4 +6,8 @@
     <FontFamily x:Key="SemiBold">/Fonts/Montserrat-SemiBold.ttf#Montserrat</FontFamily>
     <FontFamily x:Key="Light">/Fonts/Montserrat-Light.ttf#Montserrat</FontFamily>
 
+    <Style x:Key="MainWindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="#3B2E59" />
+    </Style>
+
 </ResourceDictionary>

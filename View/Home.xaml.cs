@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 
 namespace YourSound
 {
-    public partial class AllMoodsAndGenres : UserControl
+    public partial class Home : UserControl
     {
-        public AllMoodsAndGenres()
+        public Home()
         {
             InitializeComponent();
         }
