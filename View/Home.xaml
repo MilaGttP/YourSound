@@ -11,13 +11,23 @@
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.15*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Image Grid.Row="1" Source="/Assets/home.png" Style="{StaticResource HomeIcon}"/>
+
+        <Border Grid.RowSpan="2" Style="{StaticResource Separator}"/>
+
+        <Grid Margin="25,0,0,0" Grid.Column="1">
+            <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
+                <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
+            </Border>
+        </Grid>
+        
+        <Grid Grid.Column="1" Grid.Row="1" Margin="25,0,25,25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.45*"/>
                 <RowDefinition/>

@@ -1,0 +1,93 @@
+﻿
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Підключені шрифти-->
+    <FontFamily x:Key="ExtraBold">/Fonts/Montserrat-ExtraBold.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="SemiBold">/Fonts/Montserrat-SemiBold.ttf#Montserrat</FontFamily>
+    <FontFamily x:Key="Light">/Fonts/Montserrat-Light.ttf#Montserrat</FontFamily>
+
+    <!--Стиль головного вікна-->
+    <Style x:Key="MainWindowStyle" TargetType="Window">
+        <Setter Property="Background" Value="#3B2E59" />
+    </Style>
+
+    <!--Стиль для TextBox пошуку-->
+    <Style x:Key="SearchingTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="280"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="10,0,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Assets/search.png"
+                           Width="18"
+                           Height="18"
+                           Margin="8"/>
+
+                        <Border Grid.Column="1"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Стиль для Border пошуку-->
+    <Style x:Key="GradientBorderSearching" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <RadialGradientBrush GradientOrigin="0.5 0.5" Center="0.5 0.5" RadiusX="2.7647" RadiusY="34.4365">
+                    <GradientStop Offset="0" Color="#FF6CC8FB" />
+                    <GradientStop Offset="0.1" Color="#FF9D86FE" />
+                    <GradientStop Offset="0.3" Color="#FFF391DC" />
+                    <GradientStop Offset="0.5" Color="#FF9B81FF" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <RadialGradientBrush GradientOrigin="0.5 0.5" Center="0.5 0.5" RadiusX="2.7647" RadiusY="34.4365">
+                    <GradientStop Offset="0" Color="#FF6CC8FB" />
+                    <GradientStop Offset="0.1" Color="#FF9D86FE" />
+                    <GradientStop Offset="0.3" Color="#FFF391DC" />
+                    <GradientStop Offset="0.5" Color="#FF9B81FF" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="Width" Value="280"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <!--Стилі Border для розділення екрану-->
+    <Style x:Key="Separator" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#635485"/>
+        <Setter Property="BorderThickness" Value="0,0,2,0"/>
+    </Style>
+    
+    <!--Стилі для іконки "Home"-->
+    <Style x:Key="HomeIcon" TargetType="Image">
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Margin" Value="0,0,0,80"/>
+    </Style>
+
+</ResourceDictionary>
