@@ -7,6 +7,24 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="HomeBtn" Grid.Row="1" Style="{StaticResource HomeButton}"/>
+        <Border Grid.RowSpan="2" Style="{StaticResource Separator}"/>
+
+        <Grid Margin="32,0,0,0" Grid.Column="1">
+            <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
+                <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
+            </Border>
+        </Grid>
+
     </Grid>
 </UserControl>
