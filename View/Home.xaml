@@ -17,11 +17,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Row="1" Source="/Assets/home.png" Style="{StaticResource HomeIcon}"/>
+        <Button x:Name="HomeBtn" Grid.Row="1" Style="{StaticResource HomeButton}"/>
 
         <Border Grid.RowSpan="2" Style="{StaticResource Separator}"/>
 
-        <Grid Margin="25,0,0,0" Grid.Column="1">
+        <Grid Margin="32,0,0,0" Grid.Column="1">
             <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
                 <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
             </Border>
@@ -29,17 +29,65 @@
         
         <Grid Grid.Column="1" Grid.Row="1" Margin="25,0,25,25">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.45*"/>
+                <RowDefinition Height="0.6*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.42*"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+
+                <Border Style="{StaticResource MusicLifeBorder}">
+                    <Grid Margin="5">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.8*"/>
+                            <RowDefinition Height="0.4*"/>
+                            <RowDefinition Height="0.6*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="MUSIC" FontSize="46"  Style="{StaticResource MusicLifeTextBlock}"/>
+                        <TextBlock Grid.Row="1" FontSize="24" Text="is" Style="{StaticResource MusicLifeTextBlock}"/>
+                        <TextBlock Grid.Row="2" FontSize="30" Text="LIFE" Style="{StaticResource MusicLifeTextBlock}"/>
+
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Style="{StaticResource AllInAppBorder}">
+                    <Grid Margin="5">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.55*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Усе в одному додатку" FontSize="24" Style="{StaticResource HomeTextBlock}"/>
+
+                        <Grid Grid.Row="1" Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Margin="15,6,7.5,16" Style="{StaticResource SettingsBorder}">
+                                <Button Style="{StaticResource SettingsButton}">
+                                    <TextBlock Text="Налаштувати гітару" Style="{StaticResource SettingsTextBlock}"/>
+                                </Button>
+                            </Border>
+
+                            <Border Grid.Column="1" Margin="7.5,6,15,16" Style="{StaticResource SettingsBorder}">
+                                <Button Style="{StaticResource SettingsButton}">
+                                    <TextBlock Text="Бібліотека акордів" Style="{StaticResource SettingsTextBlock}"/>
+                                </Button>
+                            </Border>
+
+                        </Grid>
+                    </Grid>
+                </Border>
             </Grid>
-            
+
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.8*"/>
@@ -48,20 +96,183 @@
 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.65*"/>
+                        <RowDefinition Height="0.8*"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+
+                    <Border Style="{StaticResource TopSongsBorder}">
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.35*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid>
+                                <TextBlock Text="Топ пісень" Style="{StaticResource HomeTextBlock}"/>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="0.85*"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Source="/Assets/unnamed.jpg"/>
+                                    <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                    <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Border>
 
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                    </Grid>
 
+                        <Border Style="{StaticResource HomeBorder}">
+
+                            <Grid Margin="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.25*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Вам сподобається" Style="{StaticResource HomeTextBlock}"/>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Margin="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.15*"/>
+                                            <ColumnDefinition Width="0.35*"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="0.35*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="01" Style="{StaticResource NumerationTextBlock}"/>
+                                        <Image Grid.Column="1" Source="/Assets/unnamed.jpg"/>
+
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
+                                            <TextBlock Grid.Row="1" Text="Nirvana" Style="{StaticResource SongAuthorTextBlock}"/>
+
+                                        </Grid>
+
+                                        <Button Grid.Column="3" Style="{StaticResource LikeButton}"/>
+
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border Grid.Column="1" Style="{StaticResource HomeBorder}">
+                            <Grid Margin="5">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.22*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Настрої та жанри" Style="{StaticResource HomeTextBlock}"/>
+
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border CornerRadius="6" Background="#987EEC" Margin="0,0,120,2">
+                                        <Button Content="Хіп-хоп" Style="{StaticResource GenreButton}"/>
+                                    </Border>
+                                    <Border CornerRadius="6" Background="#C584DA" Margin="72,0,80,2">
+                                        <Button Content="2000-і" Style="{StaticResource GenreButton}"/>
+                                    </Border>
+                                    
+                                </Grid>
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
                 </Grid>
+                
+                <Border Grid.Column="1" Style="{StaticResource HomeBorder}">
+                    <Grid Margin="5">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.12*"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Плеєр" Style="{StaticResource HomeTextBlock}"/>
+
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Margin="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.3*"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="0.25*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="/Assets/unnamed.jpg"/>
+
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="0.65*"/>
+                                        <RowDefinition Height="0.6*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="All for nothing" Style="{StaticResource SongNameTextBlock}"/>
+                                    <TextBlock Grid.Row="1" Text="Nirvana" Style="{StaticResource SongAuthorTextBlock}"/>
+                                    <TextBlock Grid.Row="2" Text="03:25" Style="{StaticResource SongDurationTextBlock}"/>
+
+                                </Grid>
+
+                                <Button Grid.Column="2" Style="{StaticResource PlayButton}"/>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+
             </Grid>
-            
         </Grid>
     </Grid>
 </UserControl>
