@@ -230,7 +230,6 @@
         <Setter Property="Width" Value="12"/>
         <Setter Property="Height" Value="12"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Content">
             <Setter.Value>
                 <Image Source="/Assets/like.png" Width="8" Height="8"/>
@@ -244,7 +243,6 @@
         <Setter Property="Width" Value="12"/>
         <Setter Property="Height" Value="12"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Content">
             <Setter.Value>
                 <Image Source="/Assets/play.png" Width="8" Height="8"/>
@@ -262,6 +260,33 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
+
+    <!--Стилі для Header TextBlock -->
+    <Style x:Key="HeaderTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Margin" Value="32,0,0,0"/>
+    </Style>
+
+    <!--Стилі для TunerButton Border -->
+    <Style x:Key="TunerButtonBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="100"/>
+        <Setter Property="Width" Value="45"/>
+        <Setter Property="Height" Value="45"/>
+    </Style>
+
+    <!--Стилі для Tuner Button -->
+    <Style x:Key="TunerButton" TargetType="Button">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
 
 </ResourceDictionary>

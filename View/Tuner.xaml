@@ -26,5 +26,48 @@
             </Border>
         </Grid>
 
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Налаштування гітари" Style="{StaticResource HeaderTextBlock}"/>
+
+            <Grid Grid.Row="1" Margin="0,30,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.4*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.4*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.9*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1.1*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Background="#6FAFEB" VerticalAlignment="Bottom" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="DTunerBtn" Content="D" Style="{StaticResource TunerButton}"/>
+                </Border>
+                <Border Grid.Row="1" Background="#987EEC" VerticalAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="ATunerBtn" Content="A" Style="{StaticResource TunerButton}"/>
+                </Border>
+                <Border Grid.Row="2" Background="#BC83DD" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="ELowTunerBtn" Content="E" Style="{StaticResource TunerButton}"/>
+                </Border>
+                <Image Grid.Column="1" Grid.RowSpan="4" Source="/Assets/guitar.png"/>
+                <Border Grid.Column="2" Background="#A680E6" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="GTunerBtn" Content="G" Style="{StaticResource TunerButton}"/>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="1" Background="#E476F9" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="BTunerBtn" Content="B" Style="{StaticResource TunerButton}"/>
+                </Border>
+                <Border Grid.Column="2" Grid.Row="2" Background="#C4A3E7" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
+                    <Button x:Name="EHighTunerBtn" Content="E" Style="{StaticResource TunerButton}"/>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>
