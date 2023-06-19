@@ -123,18 +123,21 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-                                <Grid>
+                                <Button Style="{StaticResource DefaultButton}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
 
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="3*"/>
-                                        <RowDefinition Height="0.85*"/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-
-                                    <Image Source="/Assets/unnamed.jpg"/>
-                                    <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
-                                    <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
-                                </Grid>
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
                             </Grid>
                         </Grid>
                     </Border>
@@ -154,7 +157,7 @@
                                 </Grid.RowDefinitions>
 
                                 <TextBlock Text="Вам сподобається" Style="{StaticResource HomeTextBlock}"/>
-
+ 
                                 <Grid Grid.Row="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
@@ -162,31 +165,35 @@
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
 
-                                    <Grid Margin="3">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.15*"/>
-                                            <ColumnDefinition Width="0.35*"/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition Width="0.35*"/>
-                                        </Grid.ColumnDefinitions>
+                                    <Button Style="{StaticResource DefaultButton}">
+                                        <Button.Content>
+                                            <Grid Width="185">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.15*"/>
+                                                    <ColumnDefinition Width="0.35*"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="0.35*"/>
+                                                </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="01" Style="{StaticResource NumerationTextBlock}"/>
-                                        <Image Grid.Column="1" Source="/Assets/unnamed.jpg"/>
+                                                <TextBlock Text="01" Style="{StaticResource NumerationTextBlock}"/>
+                                                <Image Grid.Column="1" Source="/Assets/unnamed.jpg"/>
 
-                                        <Grid Grid.Column="2">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
+                                                <Grid Grid.Column="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
 
-                                            <TextBlock Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
-                                            <TextBlock Grid.Row="1" Text="Nirvana" Style="{StaticResource SongAuthorTextBlock}"/>
+                                                    <TextBlock Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
+                                                    <TextBlock Grid.Row="1" Text="Nirvana" Style="{StaticResource SongAuthorTextBlock}"/>
 
-                                        </Grid>
+                                                </Grid>
 
-                                        <Button Grid.Column="3" Style="{StaticResource LikeButton}"/>
+                                                <Button Grid.Column="3" Style="{StaticResource LikeButton}"/>
 
-                                    </Grid>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
                                 </Grid>
                             </Grid>
                         </Border>
