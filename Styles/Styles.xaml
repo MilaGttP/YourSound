@@ -264,7 +264,6 @@
 
     <!--Стилі для Header TextBlock -->
     <Style x:Key="HeaderTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="26"/>
         <Setter Property="FontWeight" Value="ExtraBold"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
@@ -287,6 +286,12 @@
         <Setter Property="Foreground" Value="#FFFFFF"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <!--Стилі для Default Button -->
+    <Style x:Key="DefaultButton" TargetType="Button">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
     </Style>
 
 </ResourceDictionary>
