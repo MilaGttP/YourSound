@@ -32,7 +32,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Налаштування гітари" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="Налаштування гітари" FontSize="26" Style="{StaticResource HeaderTextBlock}"/>
 
             <Grid Grid.Row="1" Margin="0,30,0,0">
                 <Grid.ColumnDefinitions>
