@@ -387,4 +387,50 @@
         <Setter Property="Height" Value="80"/>
     </Style>
 
+    <!--Стилі для Author Image -->
+    <Style x:Key="AuthorImage" TargetType="Image">
+        <Setter Property="Stretch" Value="UniformToFill"/>
+        <Setter Property="Width" Value="720"/>
+        <Setter Property="Height" Value="200"/>
+    </Style>
+
+    <!--Стилі для AuthorName TextBlock -->
+    <Style x:Key="AuthorNameTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="30,15,0,0"/>
+    </Style>
+
+    <!--Стилі для AuthorDescription TextBlock -->
+    <Style x:Key="AuthorDescriptionTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="30,0,0,35"/>
+    </Style>
+
+    <!--Стилі для AuthorShadow Border -->
+    <Style x:Key="AuthorShadowBorder" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Transparent" Offset="0" />
+                    <GradientStop Color="#3B2E59" Offset="0.9823" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Стилі для AuthorSong Button -->
+    <Style x:Key="AuthorSongButton" TargetType="Button">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
 </ResourceDictionary>

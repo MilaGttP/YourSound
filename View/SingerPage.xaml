@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:YourSound"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.1*"/>
@@ -25,6 +25,54 @@
                 <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
             </Border>
         </Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image Source="/Assets/unnamed1.jpg" Style="{StaticResource AuthorImage}"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="Океан Ельзи" Style="{StaticResource AuthorNameTextBlock}"/>
+                    <TextBlock Grid.Row="1" Text="опис групи шщващарваджищшвир" Style="{StaticResource AuthorDescriptionTextBlock}"/>
+                    <Border Grid.Row="1" Style="{StaticResource AuthorShadowBorder}"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.35*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Пісні" FontSize="20" Margin="30,0,0,0" Style="{StaticResource HeaderTextBlock}"/>
+                    <Button Grid.Row="1" Style="{StaticResource AuthorSongButton}">
+                        <Button.Content>
+                            <Grid Width="500">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.34*"/>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="0.15*"/>
+                                    <ColumnDefinition Width="0.15*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="/Assets/unnamed.jpg" Style="{StaticResource DefaultImage}"/>
+                                <TextBlock Grid.Column="1" Text="All 4 nothing" Style="{StaticResource SearchedTextTextBlock}"/>
+                                <Button Grid.Column="2" Style="{StaticResource LikeButton}"/>
+                                <Button Grid.Column="3" Style="{StaticResource PlayButton}"/>
+
+                            </Grid>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+                
+            </Grid>
+        </ScrollViewer>
 
     </Grid>
 </UserControl>
