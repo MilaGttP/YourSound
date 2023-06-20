@@ -8,7 +8,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
@@ -24,6 +25,15 @@
             <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
                 <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
             </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            
+        </Grid>
+
+
+        <Grid Grid.RowSpan="2" Grid.Column="2">
+
         </Grid>
 
     </Grid>
