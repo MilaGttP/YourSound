@@ -32,7 +32,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Бібліотека акордів" FontSize="26" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="Бібліотека акордів" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
             <Grid Grid.Row="1" Margin="28,5,40,40">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

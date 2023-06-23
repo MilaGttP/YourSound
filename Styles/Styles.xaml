@@ -345,8 +345,8 @@
     <!--Стилі для Library Border -->
     <Style x:Key="LibraryBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="10"/>
-        <Setter Property="Width" Value="80"/>
-        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="125"/>
+        <Setter Property="Height" Value="55"/>
     </Style>
 
     <!--Стилі для Library TextBlock -->
@@ -355,7 +355,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="22"/>
     </Style>
 
     <!--Стилі для Library Expander -->
