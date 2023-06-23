@@ -5,18 +5,24 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\guitar.png" />
     <None Remove="Assets\home.png" />
     <None Remove="Assets\like.png" />
+    <None Remove="Assets\logo.png" />
     <None Remove="Assets\mediator.png" />
     <None Remove="Assets\play.png" />
     <None Remove="Assets\save.png" />
     <None Remove="Assets\search.png" />
     <None Remove="Assets\unnamed.jpg" />
     <None Remove="Assets\unnamed1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\logo.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +35,7 @@
     <Resource Include="Assets\guitar.png" />
     <Resource Include="Assets\home.png" />
     <Resource Include="Assets\like.png" />
+    <Resource Include="Assets\logo.png" />
     <Resource Include="Assets\mediator.png" />
     <Resource Include="Assets\play.png" />
     <Resource Include="Assets\save.png" />
