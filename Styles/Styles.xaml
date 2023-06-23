@@ -6,6 +6,22 @@
         <Setter Property="Background" Value="#3B2E59" />
     </Style>
 
+    <!--Наведення миші на кнопку - без кольору -->
+    <ControlTemplate x:Key="NoMouseOverButtonTemplate" TargetType="Button">
+        
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{x:Static SystemColors.ControlLightBrush}" />
+                <Setter Property="Foreground" Value="{x:Static SystemColors.GrayTextBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+        
+    </ControlTemplate>
+
     <!--Стиль для TextBox пошуку -->
     <Style x:Key="SearchingTextBox" TargetType="TextBox">
         <Setter Property="Background" Value="Transparent"/>
@@ -127,6 +143,7 @@
         <Setter Property="FontWeight" Value="ExtraBold"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
 
     <!--Стилі для Settings Border -->
@@ -146,7 +163,7 @@
     <!--Стилі для Settings TextBlock -->
     <Style x:Key="SettingsTextBlock" TargetType="TextBlock">
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -170,7 +187,7 @@
 
     <!--Стилі для TopSongsName TextBlock -->
     <Style x:Key="TopSongsNameTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="8"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Bottom"/>
@@ -179,7 +196,7 @@
 
     <!--Стилі для TopSongsAuthor TextBlock -->
     <Style x:Key="TopSongsAuthorTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="6"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
@@ -204,36 +221,39 @@
 
     <!--Стилі для SongName TextBlock -->
     <Style x:Key="SongNameTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="8"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalAlignment" Value="Bottom"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
     </Style>
 
     <!--Стилі для SongAuthor TextBlock -->
     <Style x:Key="SongAuthorTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="6"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
     </Style>
 
     <!--Стилі для SongDuration TextBlock -->
     <Style x:Key="SongDurationTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="5"/>
+        <Setter Property="FontSize" Value="10"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
     </Style>
 
     <!--Стилі для Like Button -->
     <Style x:Key="LikeButton" TargetType="Button">
-        <Setter Property="Width" Value="12"/>
-        <Setter Property="Height" Value="12"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Content">
             <Setter.Value>
-                <Image Source="/Assets/like.png" Width="8" Height="8"/>
+                <Image Source="/Assets/like.png" Width="12" Height="12"/>
             </Setter.Value>
         </Setter>
         <Setter Property="Background" Value="Transparent"/>
@@ -241,12 +261,12 @@
 
     <!--Стилі для Play Button -->
     <Style x:Key="PlayButton" TargetType="Button">
-        <Setter Property="Width" Value="12"/>
-        <Setter Property="Height" Value="12"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Content">
             <Setter.Value>
-                <Image Source="/Assets/play.png" Width="8" Height="8"/>
+                <Image Source="/Assets/play.png" Width="12" Height="12"/>
             </Setter.Value>
         </Setter>
         <Setter Property="Background" Value="Transparent"/>

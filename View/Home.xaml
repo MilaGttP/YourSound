@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="HomeBtn" Grid.Row="1" Style="{StaticResource HomeButton}"/>
+        <Button x:Name="HomeBtn" Grid.Row="1" Style="{StaticResource HomeButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
         <Border Grid.RowSpan="2" Style="{StaticResource Separator}"/>
 
         <Grid Margin="32,0,0,0" Grid.Column="1">
@@ -27,7 +27,7 @@
         
         <Grid Grid.Column="1" Grid.Row="1" Margin="25,0,25,25">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.5*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
@@ -46,9 +46,9 @@
                             <RowDefinition Height="0.6*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="MUSIC" FontSize="46"  Style="{StaticResource MusicLifeTextBlock}"/>
-                        <TextBlock Grid.Row="1" FontSize="24" Text="is" Style="{StaticResource MusicLifeTextBlock}"/>
-                        <TextBlock Grid.Row="2" FontSize="30" Text="LIFE" Style="{StaticResource MusicLifeTextBlock}"/>
+                        <TextBlock Text="MUSIC" FontSize="82"  Style="{StaticResource MusicLifeTextBlock}"/>
+                        <TextBlock Grid.Row="1" FontSize="34" Text="is" Style="{StaticResource MusicLifeTextBlock}"/>
+                        <TextBlock Grid.Row="2" FontSize="50" Text="LIFE" Style="{StaticResource MusicLifeTextBlock}"/>
 
                     </Grid>
                 </Border>
@@ -57,11 +57,12 @@
                     <Grid Margin="5">
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0.55*"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="0.65*"/>
+                            <RowDefinition Height="0.8*"/>
+                            <RowDefinition Height="0.15*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="Усе в одному додатку" FontSize="24" Style="{StaticResource HomeTextBlock}"/>
+                        <TextBlock Text="Усе в одному додатку" FontSize="42" Style="{StaticResource HomeTextBlock}"/>
 
                         <Grid Grid.Row="1" Margin="5">
                             <Grid.ColumnDefinitions>
@@ -70,13 +71,13 @@
                             </Grid.ColumnDefinitions>
 
                             <Border Margin="15,6,7.5,16" Style="{StaticResource SettingsBorder}">
-                                <Button Style="{StaticResource SettingsButton}">
+                                <Button Style="{StaticResource SettingsButton}" Template="{StaticResource NoMouseOverButtonTemplate}" >
                                     <TextBlock Text="Налаштувати гітару" Style="{StaticResource SettingsTextBlock}"/>
                                 </Button>
                             </Border>
 
                             <Border Grid.Column="1" Margin="7.5,6,15,16" Style="{StaticResource SettingsBorder}">
-                                <Button x:Name="ChordLib_Btn" Style="{StaticResource SettingsButton}">
+                                <Button x:Name="ChordLib_Btn" Style="{StaticResource SettingsButton}" Template="{StaticResource NoMouseOverButtonTemplate}" >
                                     <TextBlock Text="Бібліотека акордів" Style="{StaticResource SettingsTextBlock}"/>
                                 </Button>
                             </Border>
@@ -99,7 +100,6 @@
                     </Grid.RowDefinitions>
 
                     <Border Style="{StaticResource TopSongsBorder}">
-
                         <Grid>
 
                             <Grid.RowDefinitions>
@@ -122,7 +122,7 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-                                <Button Style="{StaticResource DefaultButton}">
+                                <Button Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
                                     <Button.Content>
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -148,7 +148,6 @@
                         </Grid.ColumnDefinitions>
 
                         <Border Style="{StaticResource HomeBorder}">
-
                             <Grid Margin="5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="0.25*"/>
@@ -164,9 +163,9 @@
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
 
-                                    <Button Style="{StaticResource DefaultButton}">
+                                    <Button Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
                                         <Button.Content>
-                                            <Grid Width="185">
+                                            <Grid Width="330">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="0.15*"/>
                                                     <ColumnDefinition Width="0.35*"/>
@@ -188,7 +187,7 @@
 
                                                 </Grid>
 
-                                                <Button Grid.Column="3" Style="{StaticResource LikeButton}"/>
+                                                <Button Grid.Column="3" Style="{StaticResource LikeButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
 
                                             </Grid>
                                         </Button.Content>
@@ -215,10 +214,10 @@
                                     </Grid.RowDefinitions>
 
                                     <Border CornerRadius="6" Background="#987EEC" Margin="0,0,120,2">
-                                        <Button Content="Хіп-хоп" Style="{StaticResource GenreButton}"/>
+                                        <Button Content="Хіп-хоп" Style="{StaticResource GenreButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                                     </Border>
                                     <Border CornerRadius="6" Background="#C584DA" Margin="72,0,80,2">
-                                        <Button Content="2000-і" Style="{StaticResource GenreButton}"/>
+                                        <Button Content="2000-і" Style="{StaticResource GenreButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                                     </Border>
                                     
                                 </Grid>
@@ -270,7 +269,7 @@
 
                                 </Grid>
 
-                                <Button Grid.Column="2" Style="{StaticResource PlayButton}"/>
+                                <Button Grid.Column="2" Style="{StaticResource PlayButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
 
                             </Grid>
                         </Grid>
