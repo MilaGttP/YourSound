@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,15 @@ using System.Windows.Shapes;
 
 namespace YourSound
 {
-    /// <summary>
-    /// Логика взаимодействия для ChordLibrary.xaml
-    /// </summary>
     public partial class ChordLibrary : UserControl
     {
-        public ChordLibrary()
+        private Navigation navigation;
+        public ChordLibrary(Navigation navigation)
         {
             InitializeComponent();
+            this.navigation = navigation;
+            GeneralCommands generalCommands = new GeneralCommands(navigation);
+            HomeBtn.Click += generalCommands.HomeBtn_Click;
         }
     }
 }

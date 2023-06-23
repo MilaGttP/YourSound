@@ -8,13 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\guitar.png" />
+    <None Remove="Assets\home.png" />
+    <None Remove="Assets\like.png" />
+    <None Remove="Assets\mediator.png" />
+    <None Remove="Assets\play.png" />
+    <None Remove="Assets\save.png" />
+    <None Remove="Assets\search.png" />
+    <None Remove="Assets\unnamed.jpg" />
+    <None Remove="Assets\unnamed1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModel\" />
+    <Resource Include="Assets\guitar.png" />
+    <Resource Include="Assets\home.png" />
+    <Resource Include="Assets\like.png" />
+    <Resource Include="Assets\mediator.png" />
+    <Resource Include="Assets\play.png" />
+    <Resource Include="Assets\save.png" />
+    <Resource Include="Assets\search.png" />
+    <Resource Include="Assets\unnamed.jpg" />
+    <Resource Include="Assets\unnamed1.jpg" />
   </ItemGroup>
 
 </Project>
