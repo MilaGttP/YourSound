@@ -24,5 +24,10 @@ namespace YourSound
             ChordLibrary chordLibrary = new ChordLibrary(navigation);
             navigation.ShowUserControl(chordLibrary);
         }
+        public void TunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Tuner tuner = new Tuner(navigation);
+            navigation.ShowUserControl(tuner);
+        }
     }
 }

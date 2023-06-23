@@ -1,28 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace YourSound
 {
-    /// <summary>
-    /// Логика взаимодействия для Tuner.xaml
-    /// </summary>
     public partial class Tuner : UserControl
     {
-        public Tuner()
+        private Navigation navigation;
+        WMPLib.WindowsMediaPlayer player;
+        public Tuner(Navigation navigation)
         {
             InitializeComponent();
+            this.navigation = navigation;
+            player = new WMPLib.WindowsMediaPlayer();
+            GeneralCommands generalCommands = new GeneralCommands(navigation);
+            HomeBtn.Click += generalCommands.HomeBtn_Click;
+
+            ELowTunerBtn.Click += ELowTunerBtn_Click;
+            ATunerBtn.Click += ATunerBtn_Click;
+            DTunerBtn.Click += DTunerBtn_Click;
+            GTunerBtn.Click += GTunerBtn_Click;
+            BTunerBtn.Click += BTunerBtn_Click;
+            EHighTunerBtn.Click += EHighTunerBtn_Click;
+        }
+
+        public void ELowTunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "E2.mp3";
+            player.controls.play();
+        }
+        public void ATunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "A.mp3";
+            player.controls.play();
+        }
+        public void DTunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "D.mp3";
+            player.controls.play();
+        }
+        public void GTunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "G.mp3";
+            player.controls.play();
+        }
+        public void BTunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "B.mp3";
+            player.controls.play();
+        }
+        public void EHighTunerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            player.URL = "E4.mp3";
+            player.controls.play();
         }
     }
 }

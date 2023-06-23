@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "YourSound": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\user\\source\\repos\\# # Coursework\\YourSound\\Assets\\Sounds"
+    }
+  }
+}

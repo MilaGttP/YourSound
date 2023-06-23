@@ -23,7 +23,9 @@ namespace YourSound
             InitializeComponent();
             this.navigation = navigation;
             GeneralCommands generalCommands = new GeneralCommands(navigation);
+
             ChordLib_Btn.Click += generalCommands.ChordLibBtn_Click;
+            TunerBtn.Click += generalCommands.TunerBtn_Click;
         }
     }
 }

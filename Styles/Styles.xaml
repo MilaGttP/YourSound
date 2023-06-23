@@ -294,15 +294,15 @@
     <!--Стилі для TunerButton Border -->
     <Style x:Key="TunerButtonBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="100"/>
-        <Setter Property="Width" Value="45"/>
-        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Height" Value="75"/>
     </Style>
 
     <!--Стилі для Tuner Button -->
     <Style x:Key="TunerButton" TargetType="Button">
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontSize" Value="32"/>
         <Setter Property="FontWeight" Value="ExtraBold"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

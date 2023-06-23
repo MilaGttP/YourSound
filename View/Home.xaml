@@ -71,7 +71,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Border Margin="15,6,7.5,16" Style="{StaticResource SettingsBorder}">
-                                <Button Style="{StaticResource SettingsButton}" Template="{StaticResource NoMouseOverButtonTemplate}" >
+                                <Button x:Name="TunerBtn" Style="{StaticResource SettingsButton}" Template="{StaticResource NoMouseOverButtonTemplate}" >
                                     <TextBlock Text="Налаштувати гітару" Style="{StaticResource SettingsTextBlock}"/>
                                 </Button>
                             </Border>

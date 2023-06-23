@@ -32,12 +32,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Налаштування гітари" FontSize="26" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="Налаштування гітари" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
 
             <Grid Grid.Row="1" Margin="0,30,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1.4*"/>
-                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.55*"/>
                     <ColumnDefinition Width="1.4*"/>
                 </Grid.ColumnDefinitions>
 
@@ -49,23 +49,23 @@
                 </Grid.RowDefinitions>
 
                 <Border Background="#6FAFEB" VerticalAlignment="Bottom" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="DTunerBtn" Content="D" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="DTunerBtn" Content="D" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
                 <Border Grid.Row="1" Background="#987EEC" VerticalAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="ATunerBtn" Content="A" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="ATunerBtn" Content="A" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
                 <Border Grid.Row="2" Background="#BC83DD" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="ELowTunerBtn" Content="E" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="ELowTunerBtn" Content="E" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
                 <Image Grid.Column="1" Grid.RowSpan="4" Source="/Assets/guitar.png"/>
                 <Border Grid.Column="2" Background="#A680E6" VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="GTunerBtn" Content="G" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="GTunerBtn" Content="G" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="1" Background="#E476F9" VerticalAlignment="Center" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="BTunerBtn" Content="B" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="BTunerBtn" Content="B" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
                 <Border Grid.Column="2" Grid.Row="2" Background="#C4A3E7" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource TunerButtonBorder}">
-                    <Button x:Name="EHighTunerBtn" Content="E" Style="{StaticResource TunerButton}"/>
+                    <Button x:Name="EHighTunerBtn" Content="E" Style="{StaticResource TunerButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
                 </Border>
             </Grid>
         </Grid>
