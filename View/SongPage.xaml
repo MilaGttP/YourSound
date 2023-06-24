@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.15*"/>
+            <ColumnDefinition Width="0.16*"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -29,13 +29,13 @@
 
         <Grid Grid.Row="1" Grid.Column="1" Margin="30,0,20,20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.12*"/>
-                <RowDefinition Height="0.08*"/>
-                <RowDefinition Height="0.18*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.06*"/>
+                <RowDefinition Height="0.15*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="All for nothing" FontSize="20" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="All for nothing" FontSize="32" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
             <TextBlock Grid.Row="1" Text="Cooool" Style="{StaticResource SongPageAuthorTextBlock}"/>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -62,11 +62,11 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Бій" FontSize="18" Margin="20,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
-            <TextBlock Grid.Row="1" Text="вісімка, 2 рази на 1 акорд" FontSize="14" Margin="20,0,0,0" Style="{StaticResource SongAuthorTextBlock}"/>
-            <TextBlock Grid.Row="2" Text="Акорди" FontSize="18" Margin="20,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="Бій" FontSize="26" Margin="35,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Grid.Row="1" Text="вісімка, 2 рази на 1 акорд" FontSize="16" Margin="35,0,0,0" Style="{StaticResource SongAuthorTextBlock}"/>
+            <TextBlock Grid.Row="2" Text="Акорди" FontSize="26" Margin="35,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
 
-            <Grid Grid.Row="3" Margin="20,0,20,20">
+            <Grid Grid.Row="3" Margin="35,0,30,35">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.25*"/>
                     <RowDefinition/>

@@ -50,10 +50,10 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Пісні" FontSize="20" Margin="30,0,0,0" Style="{StaticResource HeaderTextBlock}"/>
-                    <Button Grid.Row="1" Style="{StaticResource AuthorSongButton}">
+                    <TextBlock Text="Пісні" FontSize="26" Margin="30,0,0,0" Style="{StaticResource HeaderTextBlock}"/>
+                    <Button Grid.Row="1" Style="{StaticResource AuthorSongButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
                         <Button.Content>
-                            <Grid Width="500">
+                            <Grid Width="520">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="0.34*"/>
                                     <ColumnDefinition />
