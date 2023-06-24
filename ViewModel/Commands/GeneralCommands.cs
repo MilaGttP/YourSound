@@ -21,8 +21,11 @@ namespace YourSound
         }
         public void ChordLibBtn_Click(object sender, RoutedEventArgs e)
         {
-            ChordLibrary chordLibrary = new ChordLibrary(navigation);
-            navigation.ShowUserControl(chordLibrary);
+            //ChordLibrary chordLibrary = new ChordLibrary(navigation);
+            //navigation.ShowUserControl(chordLibrary);
+
+            CurrentMoodOrGenre currentMoodOrGenre = new CurrentMoodOrGenre(navigation);
+            navigation.ShowUserControl(currentMoodOrGenre);
         }
         public void TunerBtn_Click(object sender, RoutedEventArgs e)
         {

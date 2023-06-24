@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace YourSound
 {
@@ -24,8 +12,8 @@ namespace YourSound
             this.navigation = navigation;
             GeneralCommands generalCommands = new GeneralCommands(navigation);
 
-            ChordLib_Btn.Click += generalCommands.ChordLibBtn_Click;
             TunerBtn.Click += generalCommands.TunerBtn_Click;
+            ChordLib_Btn.Click += generalCommands.ChordLibBtn_Click;
         }
     }
 }
