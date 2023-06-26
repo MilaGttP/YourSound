@@ -111,7 +111,7 @@
                                 <TextBlock Text="Топ пісень" Style="{StaticResource HomeTextBlock}"/>
                             </Grid>
 
-                            <Grid Grid.Row="1">
+                            <Grid Grid.Row="1" Margin="15,0,15,0">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -137,6 +137,119 @@
                                         </Grid>
                                     </Button.Content>
                                 </Button>
+
+                                <Button Grid.Column="1" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="2" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="3" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="4" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="5" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="6" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
+                                <Button Grid.Column="7" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="0.85*"/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="/Assets/unnamed.jpg"/>
+                                            <TextBlock Grid.Row="1" Text="Coool" Style="{StaticResource TopSongsNameTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="Author" Style="{StaticResource TopSongsAuthorTextBlock}"/>
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+
                             </Grid>
                         </Grid>
                     </Border>
@@ -158,7 +271,6 @@
  
                                 <Grid Grid.Row="1">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition/>
                                         <RowDefinition/>
                                         <RowDefinition/>
                                     </Grid.RowDefinitions>
@@ -192,6 +304,37 @@
                                             </Grid>
                                         </Button.Content>
                                     </Button>
+
+                                    <Button Grid.Row="1" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                        <Button.Content>
+                                            <Grid Width="330">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.15*"/>
+                                                    <ColumnDefinition Width="0.35*"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="0.35*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <TextBlock Text="02" Style="{StaticResource NumerationTextBlock}"/>
+                                                <Image Grid.Column="1" Source="/Assets/unnamed.jpg"/>
+
+                                                <Grid Grid.Column="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
+                                                    <TextBlock Grid.Row="1" Text="Nirvana" Style="{StaticResource SongAuthorTextBlock}"/>
+
+                                                </Grid>
+
+                                                <Button Grid.Column="3" Style="{StaticResource LikeButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
+
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+
                                 </Grid>
                             </Grid>
                         </Border>

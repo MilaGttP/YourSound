@@ -23,6 +23,15 @@ namespace YourSound
         {
             ChordLibrary chordLibrary = new ChordLibrary(navigation);
             navigation.ShowUserControl(chordLibrary);
+
+            //CurrentMoodOrGenre currentMoodOrGenre = new CurrentMoodOrGenre(navigation);
+            //navigation.ShowUserControl(currentMoodOrGenre);
+
+            //SingerPage singer = new SingerPage(navigation);
+            //navigation.ShowUserControl(singer);
+
+            //SongPage songPage = new SongPage(navigation);
+            //navigation.ShowUserControl(songPage);
         }
         public void TunerBtn_Click(object sender, RoutedEventArgs e)
         {
