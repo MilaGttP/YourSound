@@ -54,23 +54,19 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
-                        <Button.Content>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="5*"/>
-                                    <RowDefinition />
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
-                                <Image Margin="0,5,5,5" Source="/Assets/unnamed.jpg"/>
-                                <TextBlock Grid.Row="1" Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
-                                <TextBlock Grid.Row="2" Text="2022" Style="{StaticResource SongDurationTextBlock}"/>
+                        <Image Margin="0,5,5,5" Source="/Assets/unnamed.jpg"/>
+                        <TextBlock Grid.Row="1" Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
+                        <TextBlock Grid.Row="2" Text="2022" Style="{StaticResource SongDurationTextBlock}"/>
 
-                            </Grid>
+                    </Grid>
 
-                        </Button.Content>
-                    </Button>
                 </Grid>
 
             </Grid>
