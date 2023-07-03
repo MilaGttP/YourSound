@@ -52,8 +52,6 @@
     <Resource Include="Assets\play.png" />
     <Resource Include="Assets\save.png" />
     <Resource Include="Assets\search.png" />
-    <Resource Include="Assets\unnamed.jpg" />
-    <Resource Include="Assets\unnamed1.jpg" />
   </ItemGroup>
 
   <ItemGroup>
