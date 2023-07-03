@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:YourSound"
              mc:Ignorable="d">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.08*"/>
@@ -117,8 +118,18 @@
                             </Grid>
 
                             <Grid Grid.Row="1" Margin="20,0,20,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="41*"/>
+                                    <ColumnDefinition Width="192*"/>
+                                </Grid.ColumnDefinitions>
 
-                                <ListView ItemsSource="{Binding TopSongs, Mode=TwoWay}" Style="{StaticResource DefaultListView}" >
+                                <ListView ItemsSource="{Binding TopSongs, Mode=TwoWay}" 
+                                          Style="{StaticResource DefaultListView}" 
+                                          Grid.ColumnSpan="2"
+                                          SelectionMode="Single"
+                                          SelectedItem="{Binding SelectedSong, Mode=TwoWay}"
+                                          MouseDoubleClick="SongPage_Click"
+                                          >
                                     <ListView.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal"/>
@@ -126,7 +137,10 @@
                                     </ListView.ItemsPanel>
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
-                                            <Button Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                            <Button x:Name="TestBtn"  
+                                                    Style="{StaticResource DefaultButton}" 
+                                                    Template="{StaticResource NoMouseOverButtonTemplate}" 
+                                                    >   
                                                 <Button.Content>
                                                     <Grid>
                                                         <Grid.RowDefinitions>
@@ -167,7 +181,9 @@
 
                                 <Grid Grid.Row="1">
 
-                                    <ListView ItemsSource="{Binding YouWillLikeSongs, Mode=TwoWay}" Style="{StaticResource DefaultListView}" >
+                                    <ListView ItemsSource="{Binding YouWillLikeSongs, Mode=TwoWay}" 
+                                              Style="{StaticResource DefaultListView}" 
+                                              SelectedItem="{Binding SelectedSong}">
                                         <ListView.ItemsPanel>
                                             <ItemsPanelTemplate>
                                                 <StackPanel Orientation="Vertical"/>
@@ -176,8 +192,13 @@
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
 
-                                                <Button HorizontalAlignment="Left" Style="{StaticResource DefaultButton}" 
-                                            Template="{StaticResource NoMouseOverButtonTemplate}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                                <Button
+                                                        HorizontalAlignment="Left" 
+                                                        Style="{StaticResource DefaultButton}" 
+                                                        Template="{StaticResource NoMouseOverButtonTemplate}" 
+                                                        HorizontalContentAlignment="Stretch" 
+                                                        VerticalContentAlignment="Stretch"
+                                                        >
                                                     <Button.Content>
                                                         <Grid>
                                                             <Grid.ColumnDefinitions>
@@ -199,7 +220,7 @@
 
                                                             </Grid>
 
-                                                            <Button Grid.Column="2" Style="{StaticResource LikeButtonHome}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                                            <Button x:Name="LikeBtn"  Grid.Column="2" Style="{StaticResource LikeButtonHome}" Template="{StaticResource NoMouseOverButtonTemplate}">
                                                                 <Button.Content>
                                                                     <Image Source="/Assets/like.png" Width="12" Height="12"/>
                                                                 </Button.Content>
@@ -288,7 +309,9 @@
 
                         <Grid Grid.Row="1">
 
-                            <ListView ItemsSource="{Binding PlayerSongs, Mode=TwoWay}" Style="{StaticResource DefaultListView}" >
+                            <ListView ItemsSource="{Binding PlayerSongs, Mode=TwoWay}" 
+                                      Style="{StaticResource DefaultListView}" 
+                                      SelectedItem="{Binding SelectedSong}">
                                 <ListView.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <StackPanel Orientation="Vertical"/>
@@ -297,8 +320,13 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
 
-                                        <Button HorizontalAlignment="Left" Style="{StaticResource DefaultButton}" 
-                                            Template="{StaticResource NoMouseOverButtonTemplate}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <Button 
+                                                HorizontalAlignment="Left" 
+                                                Style="{StaticResource DefaultButton}" 
+                                                Template="{StaticResource NoMouseOverButtonTemplate}" 
+                                                HorizontalContentAlignment="Stretch" 
+                                                VerticalContentAlignment="Stretch"
+                                                >
                                             <Button.Content>
                                                 <Grid Margin="3">
                                                     <Grid.ColumnDefinitions>
@@ -319,7 +347,7 @@
                                                         <TextBlock Text="{Binding Song.Name}" Style="{StaticResource SongNameTextBlock}"/>
                                                         <TextBlock Grid.Row="1" Text="{Binding Singer.Name}" Style="{StaticResource SongAuthorTextBlock}"/>
                                                     </Grid>
-                                                    <Button Grid.Column="2" Style="{StaticResource PlayButtonHome}" Template="{StaticResource NoMouseOverButtonTemplate}">
+                                                    <Button x:Name="PlayBtn" Grid.Column="2" Style="{StaticResource PlayButtonHome}" Template="{StaticResource NoMouseOverButtonTemplate}">
                                                         <Button.Content>
                                                             <Image Source="/Assets/play.png" Width="12" Height="12"/>
                                                         </Button.Content>
@@ -327,7 +355,7 @@
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
-                                        
+
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>

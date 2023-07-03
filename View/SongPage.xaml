@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:YourSound"
              mc:Ignorable="d" 
              >
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.16*"/>
@@ -35,7 +36,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="All for nothing" FontSize="32" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="{Binding SelectedSong.Name}" FontSize="32" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
             <TextBlock Grid.Row="1" Text="Cooool" Style="{StaticResource SongPageAuthorTextBlock}"/>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace YourSound
 {
@@ -43,7 +45,7 @@ namespace YourSound
             }
         }
 
-        private Song selectedSong;
+        static private Song selectedSong;
         public Song SelectedSong
         {
             get { return selectedSong; }
