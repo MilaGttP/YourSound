@@ -212,7 +212,8 @@
 
     <!--Стилі для Numeration TextBlock -->
     <Style x:Key="NumerationTextBlock" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -225,7 +226,7 @@
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalAlignment" Value="Bottom"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
     </Style>
 
     <!--Стилі для SongAuthor TextBlock -->
@@ -234,7 +235,7 @@
         <Setter Property="FontWeight" Value="Light"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
-        <Setter Property="Margin" Value="5,0,0,0"/>
+        <Setter Property="Margin" Value="10,0,0,0"/>
     </Style>
 
     <!--Стилі для SongDuration TextBlock -->
@@ -258,6 +259,22 @@
         </Setter>
         <Setter Property="Background" Value="Transparent"/>
     </Style>
+        
+    <!--Стилі для DefaultListView  -->
+    <Style x:Key="DefaultListView" TargetType="ListView">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+    </Style>
+
+    <!--Стилі для Like ButtonHome -->
+    <Style x:Key="LikeButtonHome" TargetType="Button">
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
 
     <!--Стилі для Play Button -->
     <Style x:Key="PlayButton" TargetType="Button">
@@ -272,9 +289,17 @@
         <Setter Property="Background" Value="Transparent"/>
     </Style>
 
+    <!--Стилі для Play ButtonHome -->
+    <Style x:Key="PlayButtonHome" TargetType="Button">
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
     <!--Стилі для Genre Button -->
     <Style x:Key="GenreButton" TargetType="Button">
-        <Setter Property="FontSize" Value="8"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
