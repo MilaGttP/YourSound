@@ -50,5 +50,28 @@ namespace YourSound
                 return null;
             }
         }
+        public static async Task<List<SongAndSinger>> GetSongAuthorPairs(List<Song> songs)
+        {
+            try
+            {
+                List<SongAndSinger> pairs = new List<SongAndSinger>();
+                using (var dbContext = new DBContext())
+                {
+                    pairs = await dbContext.Song
+                        .Join(dbContext.Singer,
+                            song => song.SingerID,
+                            singer => singer.ID,
+                            (song, singer) => new SongAndSinger { Song = song, Singer = singer })
+                        .Where(pair => songs.Contains(pair.Song))
+                        .ToListAsync();
+                }
+                return pairs;
+            }
+            catch (Exception ex)
+            {
+                Console.Write($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
     }
 }

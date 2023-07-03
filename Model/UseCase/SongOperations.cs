@@ -33,49 +33,6 @@ namespace YourSound
                 return null;
             }
         }
-        public static async Task<List<Singer>> GetAllSongSingers(string songName)
-        {
-            try
-            {
-                using (var dbContext = new DBContext())
-                {
-                    var singers = await dbContext.SingerSong
-                        .Include(ss => ss.Singer)
-                        .Include(ss => ss.Song)
-                        .Where(ss => ss.Song.Name == songName)
-                        .Select(ss => ss.Singer)
-                        .ToListAsync();
-
-                    return singers;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Помилка: {ex.Message}");
-                return null;
-            }
-        }
-        public static async Task<Singer> GetSongSinger(string songName)
-        {
-            try
-            {
-                Album songAlbum = await GetSongAlbum(songName);
-                using (var dbContext = new DBContext())
-                {
-                    var singerSong = await dbContext.SingerSong
-                        .Include(ss => ss.Singer)
-                        .FirstOrDefaultAsync(ss => ss.AlbumID == songAlbum.ID);
-
-                    return singerSong?.Singer;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Помилка: {ex.Message}");
-                return null;
-            }
-        }
-
         public static async Task<Album> GetSongAlbum(string songName)
         {
             try
@@ -135,13 +92,115 @@ namespace YourSound
                 return null;
             }
         }
-        public static async Task<List<Song>> GetSongsByQuantity(int quantity)
+        public static async Task<List<Song>> GetSongsByQuantity(int quantity, bool isFirst)
         {
             try
             {
                 DBContext dBContext = new DBContext();
-                var songs = await dBContext.Song.OrderByDescending(s => s.ID).Take(quantity).ToListAsync();
+                List<Song> songs = new List<Song>(); 
+                if (isFirst) songs = await dBContext.Song.OrderBy(s => s.ID).Take(quantity).ToListAsync();
+                else songs = await dBContext.Song.OrderByDescending(s => s.ID).Take(quantity).ToListAsync();
                 return songs;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+        public static void IncreasePopularity(int songId)
+        {
+            using (var dbContext = new DBContext())
+            {
+                var song = dbContext.Song.FirstOrDefault(s => s.ID == songId);
+                if (song != null)
+                {
+                    song.Popularity++;
+                    dbContext.SaveChanges();
+                }
+            }
+        }
+        public static bool CheckPopularSongsExist()
+        {
+            using (var dbContext = new DBContext())
+            {
+                int count = dbContext.Song.Count(s => s.Popularity > 0);
+                return count >= 7;
+            }
+        }
+        public static async Task<List<Song>> GetLastSongs(int quantity)
+        {
+            try
+            {
+                using (var dbContext = new DBContext())
+                {
+                    var lastSongs = await dbContext.Song
+                        .OrderByDescending(s => s.ID)
+                        .Take(quantity)
+                        .ToListAsync();
+
+                    return lastSongs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+
+        public static async Task<List<SongAndSinger>> GetFirstSongs(int quantity)
+        {
+            try
+            {
+                List<SongAndSinger> songAndSingers = new List<SongAndSinger>();
+                List<Song> songs = await GetSongsByQuantity(quantity, true);
+                songAndSingers = await SingerOperations.GetSongAuthorPairs(songs);
+                return songAndSingers;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+        public static async Task<List<SongAndSinger>> GetRandomSongs(int quantity)
+        {
+            try
+            {
+                using (var dbContext = new DBContext())
+                {
+                    Random random = new Random();
+                    List<int> randomSongIDs = Enumerable.Range(1, 89).OrderBy(x => random.Next()).Take(quantity).ToList();
+
+                    List<Song> randomSongs = await dbContext.Song
+                        .Where(song => randomSongIDs.Contains(song.ID))
+                        .ToListAsync();
+
+                    List<SongAndSinger> songAndSingers = await SingerOperations.GetSongAuthorPairs(randomSongs);
+
+                    return songAndSingers;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+        public static async Task<List<SongAndSinger>> GetForTopSongsBorder(int quantity)
+        {
+            try
+            {
+                List<SongAndSinger> songAndSingers = new List<SongAndSinger>();
+                List<Song> songs = new List<Song>();
+
+                if (CheckPopularSongsExist() == true) songs = await GetTopSongs(quantity);
+                else songs = await GetLastSongs(quantity);
+
+                songAndSingers = await SingerOperations.GetSongAuthorPairs(songs);
+                return songAndSingers;
+
             }
             catch (Exception ex)
             {
