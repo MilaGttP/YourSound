@@ -60,7 +60,7 @@ namespace YourSound
                 using (var dbContext = new DBContext())
                 {
                     var songs = await dbContext.Song
-                        .Where(s => s.Mood == moodOrGenre)
+                        .Where(s => s.Mood == moodOrGenre || s.Genre == moodOrGenre)
                         .ToListAsync();
 
                     return songs;
@@ -72,6 +72,7 @@ namespace YourSound
                 return null;
             }
         }
+
         public static async Task<List<Song>> GetTopSongs(int quantity)
         {
             try

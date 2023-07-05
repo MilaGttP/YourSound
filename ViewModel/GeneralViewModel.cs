@@ -45,22 +45,22 @@ namespace YourSound
             }
         }
 
-        static private Song selectedSong;
-        public Song SelectedSong
+        private SongAndSinger selectedSongAndAuthor;
+        public SongAndSinger SelectedSongAndAuthor
         {
-            get { return selectedSong; }
+            get { return selectedSongAndAuthor; }
             set
             {
-                selectedSong = value;
-                OnPropertyChanged(nameof(SelectedSong));
+                selectedSongAndAuthor = value;
+                OnPropertyChanged(nameof(SelectedSongAndAuthor));
             }
         }
 
         private async void GetSongs()
         {
-            TopSongs = await SongOperations.GetForTopSongsBorder(6);
-            YouWillLikeSongs = await SongOperations.GetRandomSongs(2);
-            PlayerSongs = await SongOperations.GetRandomSongs(5);
+            TopSongs = await SongOperations.GetForTopSongsBorder(10);
+            YouWillLikeSongs = await SongOperations.GetRandomSongs(3);
+            PlayerSongs = await SongOperations.GetRandomSongs(9);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

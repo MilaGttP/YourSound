@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:YourSound"
              mc:Ignorable="d" 
              >
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.16*"/>
@@ -36,62 +35,69 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="{Binding SelectedSong.Name}" FontSize="32" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
-            <TextBlock Grid.Row="1" Text="Cooool" Style="{StaticResource SongPageAuthorTextBlock}"/>
+            <TextBlock Text="{Binding Song.Name}" FontSize="32" Margin="0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Grid.Row="1" Text="{Binding Singer.Name}" Style="{StaticResource SongPageAuthorTextBlock}"/>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="7*"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Image Source="/Assets/unnamed.jpg" Style="{StaticResource SongImage}"/>
-                <Button Grid.Column="1" Style="{StaticResource LikeButton}"/>
-                <Button Grid.Column="2" Style="{StaticResource PlayButton}"/>
+                <Image Source="{Binding Song.Image}" Style="{StaticResource SongImage}"/>
+                <Button x:Name="LikeBtn" Grid.Column="1" Style="{StaticResource LikeButton}" Template="{StaticResource NoMouseOverButtonTemplate}" />
+                <Button x:Name="PlayBtn" Grid.Column="2" Style="{StaticResource PlayButton}" Template="{StaticResource NoMouseOverButtonTemplate}" />
             </Grid>
-            <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Hidden">
-                <TextBlock Text="Рядок тексту пісні..." Style="{StaticResource SongTextBlock}"/>
+            <ScrollViewer Margin="5" Grid.Row="3" VerticalScrollBarVisibility="Hidden">
+                <TextBlock Text="{Binding Song.Text}" Style="{StaticResource SongTextBlock}"/>
             </ScrollViewer>
         </Grid>
 
 
         <Grid Grid.RowSpan="2" Grid.Column="2" Background="#4A3B6B" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition Height="0.25*"/>
-                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.12*"/>
+                <RowDefinition Height="0.15*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Бій" FontSize="26" Margin="35,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
-            <TextBlock Grid.Row="1" Text="вісімка, 2 рази на 1 акорд" FontSize="16" Margin="35,0,0,0" Style="{StaticResource SongAuthorTextBlock}"/>
+            <TextBlock x:Name="StrumOrParts" FontSize="26" Margin="35,25,0,0" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Grid.Row="1" Text="{Binding Song.StrumOrParts}" FontSize="16" Margin="35,0,0,0" Style="{StaticResource SongAuthorTextBlock}"/>
             <TextBlock Grid.Row="2" Text="Акорди" FontSize="26" Margin="35,10,0,0" Style="{StaticResource HeaderTextBlock}"/>
 
             <Grid Grid.Row="3" Margin="35,0,30,35">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.25*"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="0.25*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Em" Style="{StaticResource ChordTextBlock}"/>
-                <TextBlock Grid.Column="1" Text="C" Style="{StaticResource ChordTextBlock}"/>
-                <TextBlock Grid.Row="2" Text="G" Style="{StaticResource ChordTextBlock}"/>
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="A" Style="{StaticResource ChordTextBlock}"/>
+                <ListView ItemsSource="{Binding Chords, Mode=TwoWay}" 
+                                      Style="{StaticResource DefaultListView}" 
+                                      >
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel HorizontalAlignment="Left" Width="550" Orientation="Horizontal" IsItemsHost="True"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
 
-                <Image Grid.Row="1" Source="/Assets/unnamed.jpg" Style="{StaticResource ChordImage}"/>
-                <Image Grid.Row="4" Source="/Assets/unnamed.jpg" Style="{StaticResource ChordImage}"/>
-                <Image Grid.Column="1" Grid.Row="1" Source="/Assets/unnamed.jpg" Style="{StaticResource ChordImage}"/>
-                <Image Grid.Column="1" Grid.Row="4" Source="/Assets/unnamed.jpg" Style="{StaticResource ChordImage}"/>
+                            <Button Style="{StaticResource DefaultButton}" 
+                                    Template="{StaticResource NoMouseOverButtonTemplate}" 
+                                    Click="ChordClick">
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.3*"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
 
+                                        <TextBlock Text="{Binding Name}" Style="{StaticResource ChordTextBlock}"/>
+                                        <Image Source="{Binding Image}" Grid.Row="1" Style="{StaticResource ChordImage}"/>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
-            
         </Grid>
-
     </Grid>
 </UserControl>

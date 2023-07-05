@@ -10,7 +10,6 @@ namespace YourSound
     public partial class Home : UserControl
     {
         private Navigation navigation;
-        private SongCommands songCommands;
         public GeneralViewModel generalViewModel { get; set; }
         public Home(Navigation navigation)
         {
@@ -21,7 +20,6 @@ namespace YourSound
 
             this.navigation = navigation;
             GeneralCommands generalCommands = new GeneralCommands(navigation);
-            songCommands = new SongCommands(navigation, generalViewModel);
 
             TunerBtn.Click += generalCommands.TunerBtn_Click;
             ChordLib_Btn.Click += generalCommands.ChordLibBtn_Click;
@@ -32,17 +30,32 @@ namespace YourSound
             string url = "https://soundcloud.com/bmrg69p5xbsv";
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
         }
-        public void SongPage_Click(object sender, MouseButtonEventArgs e)
+        public void SongPage_Click(object sender, RoutedEventArgs e)
         {
-            var temp = sender as ListView;
-            var temp2 = temp.SelectedItems as Song;
+            Button button = (Button)sender;
+            generalViewModel.SelectedSongAndAuthor = button.DataContext as SongAndSinger;
 
-            if (generalViewModel.SelectedSong == null) MessageBox.Show("Ну бл пздц.");
-            else MessageBox.Show(generalViewModel.SelectedSong.Name);
-
-            SongPage songPage = new SongPage(navigation, generalViewModel.SelectedSong);
+            SongPage songPage = new SongPage(navigation, generalViewModel.SelectedSongAndAuthor);
             navigation.ShowUserControl(songPage);
         }
+        public void MoodBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
 
+            CurrentMoodOrGenre currentMoodOrGenre = new CurrentMoodOrGenre(navigation, button.Name, generalViewModel);
+            navigation.ShowUserControl(currentMoodOrGenre);
+        }
+        public void LikeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            SongAndSinger selected = button.DataContext as SongAndSinger;
+            SongOperations.IncreasePopularity(selected.Song.ID);
+        }
+        public void PlayBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            SongAndSinger selected = button.DataContext as SongAndSinger;
+            Process.Start(new ProcessStartInfo(selected.Song.Url) { UseShellExecute = true });
+        }
     }
 }

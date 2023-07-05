@@ -11,8 +11,8 @@ namespace YourSound
         public DbSet<Chord> Chord { get; set; }
         public DbSet<Singer> Singer { get; set; }
         public DbSet<Song> Song { get; set; }
-        public DbSet<ChordsSong> ChordsSong { get; set; }
         public DbSet<SingerSong> SingerSong { get; set; }
+        public DbSet<ChordsSong> ChordsSong { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder();

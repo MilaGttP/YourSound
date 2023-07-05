@@ -28,106 +28,56 @@
 
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-                <RowDefinition/>
+                <RowDefinition Height="0.15*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Романтика" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="{Binding Name, Mode=TwoWay}" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
 
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Text="Альбоми" FontSize="32" Style="{StaticResource HeaderTextBlock}"/>
-
-                <Grid Grid.Row="1" Margin="20,0,30,0">
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
-                            <RowDefinition />
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-
-                        <Image Margin="0,5,5,5" Source="/Assets/unnamed.jpg"/>
-                        <TextBlock Grid.Row="1" Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
-                        <TextBlock Grid.Row="2" Text="2022" Style="{StaticResource SongDurationTextBlock}"/>
-
-                    </Grid>
-
-                </Grid>
-
-            </Grid>
-
-            <Grid Grid.Row="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="3.5*"/>
+                    <RowDefinition Height="6*"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Text="Пісні" FontSize="32" Style="{StaticResource HeaderTextBlock}"/>
 
-                <Grid Grid.Row="2" Margin="20,0,30,10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Margin="20,0,30,30">
 
-                    <Button Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
-                        <Button.Content>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="5*"/>
-                                    <RowDefinition />
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
+                    <ListView ItemsSource="{Binding SongsSingers, Mode=TwoWay}" 
+                                              Style="{StaticResource DefaultListView}" 
+                                              SelectionMode="Single"
+                                              >
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Left" Width="1100" IsItemsHost="True"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
-                                <Image Margin="0,10,10,10" Source="/Assets/unnamed.jpg"/>
-                                <TextBlock Grid.Row="1" Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
-                                <TextBlock Grid.Row="2" Text="Nirvana" Style="{StaticResource SongDurationTextBlock}"/>
+                                <Button Click="SongPage_Click" Style="{StaticResource DefaultMoodButton}" 
+                                        Template="{StaticResource NoMouseOverButtonTemplate}">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="5*"/>
+                                                <RowDefinition />
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
 
-                            </Grid>
-                        </Button.Content>
-                    </Button>
+                                            <Image Width="180" Height="180" Source="{Binding Song.Image}"/>
+                                            <TextBlock Grid.Row="1" Text="{Binding Song.Name}" Style="{StaticResource SongNameMoodTextBlock}"/>
+                                            <TextBlock Grid.Row="2" Text="{Binding Singer.Name}" Style="{StaticResource SongDurationTextBlock}"/>
 
-                    <Button Grid.Column="1" Style="{StaticResource DefaultButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
-                        <Button.Content>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="5*"/>
-                                    <RowDefinition />
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-
-                                <Image Margin="0,10,10,10" Source="/Assets/unnamed.jpg"/>
-                                <TextBlock Grid.Row="1" Text="Smells like teen spirit" Style="{StaticResource SongNameTextBlock}"/>
-                                <TextBlock Grid.Row="2" Text="Nirvana" Style="{StaticResource SongDurationTextBlock}"/>
-
-                            </Grid>
-                        </Button.Content>
-                    </Button>
-
+                                        </Grid>
+                                    </Button.Content>
+                                </Button>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Grid>
-
             </Grid>
-
         </Grid>
     </Grid>
 </UserControl>

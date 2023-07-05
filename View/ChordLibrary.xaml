@@ -34,162 +34,32 @@
 
             <TextBlock Text="Бібліотека акордів" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
             <Grid Grid.Row="1" Margin="28,5,40,40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+                <ListView ItemsSource="{Binding Chords, Mode=TwoWay}" 
+                                              Style="{StaticResource DefaultListView}" 
+                                              SelectionMode="Single"
+                                              >
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Width="1100" HorizontalAlignment="Left" IsItemsHost="True"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
 
-                <Border Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="C"/>
-                </Border>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.3*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
 
-                <Border Grid.Row="1" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="C#"/>
-                </Border>
-                
-                <Border Grid.Row="2" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Db"/>
-                </Border>
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource ChordTextBlock}"/>
+                                <Image Source="{Binding Image}" Grid.Row="1" Style="{StaticResource ChordLibraryImage}"/>
+                            </Grid>
 
-                <Border Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="D"/>
-                </Border>
-
-                <Border Grid.Row="1" Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="D#"/>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Eb"/>
-                </Border>
-
-                <Border Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="E"/>
-                </Border>
-
-                <Border Grid.Row="1" Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="F#"/>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Gb"/>
-                </Border>
-
-                <Border Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="F"/>
-                </Border>
-
-                <Border Grid.Row="1" Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="G#"/>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Ab"/>
-                </Border>
-
-                <Border Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="G"/>
-                </Border>
-
-                <Border Grid.Row="1" Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="A#"/>
-                </Border>
-
-                <Border Grid.Row="2" Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Bb"/>
-                </Border>
-
-                <Border Grid.Column="5" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="A"/>
-                </Border>
-
-                <Border Grid.Column="6" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="B"/>
-                </Border>
-
-                
-                <Border Grid.Row="3" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Cm"/>
-                </Border>
-
-                <Border Grid.Row="4" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="C#m"/>
-                </Border>
-
-                <Border Grid.Row="6" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Dbm"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Dm"/>
-                </Border>
-
-                <Border Grid.Row="4" Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="D#m"/>
-                </Border>
-
-                <Border Grid.Row="5" Grid.Column="1" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Ebm"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Em"/>
-                </Border>
-
-                <Border Grid.Row="4" Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="F#m"/>
-                </Border>
-
-                <Border Grid.Row="5" Grid.Column="2" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Gbm"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Fm"/>
-                </Border>
-
-                <Border Grid.Row="4" Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="G#m"/>
-                </Border>
-
-                <Border Grid.Row="5" Grid.Column="3" Background="#6FAFEB" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Abm"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Gm"/>
-                </Border>
-
-                <Border Grid.Row="4" Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="A#m"/>
-                </Border>
-
-                <Border Grid.Row="5" Grid.Column="4" Background="#C584DA" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Bbm"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="5" Background="#E476F9" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Am"/>
-                </Border>
-
-                <Border Grid.Row="3" Grid.Column="6" Background="#987EEC" Style="{StaticResource LibraryBorder}">
-                    <Expander Style="{StaticResource LibraryExpander}" Content="Bm"/>
-                </Border>
-
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
         </Grid>
     </Grid>
