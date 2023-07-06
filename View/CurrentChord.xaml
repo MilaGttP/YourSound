@@ -33,7 +33,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="{Binding Chord.Name}" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
+            <TextBlock Text="{Binding Chord.Name}" FontSize="46" Style="{StaticResource HeaderTextBlock}"/>
             <Grid Grid.Row="1" Margin="28,5,40,40">
                 <Image Source="{Binding Chord.Image}" Width="500" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>

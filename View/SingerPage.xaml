@@ -34,14 +34,14 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Image Source="/Assets/unnamed1.jpg" Style="{StaticResource AuthorImage}"/>
+                <Image Source="{Binding Singer.Image}" Style="{StaticResource AuthorImage}"/>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.5*"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="1" Text="Океан Ельзи" Style="{StaticResource AuthorNameTextBlock}"/>
-                    <TextBlock Grid.Row="1" Text="Українська рок-група. Її фронтмена та вокаліста - Святослав Вакарчука - можна впізнати з перших нот, завдяки особливій хриплості  голосу та західному говору. Їх пісні сповнені переживань та глибоких почуттів. Трагічна лірика й досконала музика здатна змусити слухача пустити не одну сльозу" Style="{StaticResource AuthorDescriptionTextBlock}"/>
+                    <TextBlock Grid.Row="1" Text="{Binding Singer.Name}" Style="{StaticResource AuthorNameTextBlock}"/>
+                    <TextBlock Grid.Row="1" Text="{Binding Singer.Description}" Style="{StaticResource AuthorDescriptionTextBlock}"/>
                     <Border Grid.Row="1" Style="{StaticResource AuthorShadowBorder}"/>
                 </Grid>
 
@@ -51,29 +51,66 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Пісні" FontSize="26" Margin="30,0,0,0" Style="{StaticResource HeaderTextBlock}"/>
-                    <Button Grid.Row="1" Style="{StaticResource AuthorSongButton}" Template="{StaticResource NoMouseOverButtonTemplate}">
-                        <Button.Content>
-                            <Grid Width="520">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0.34*"/>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition Width="0.15*"/>
-                                    <ColumnDefinition Width="0.15*"/>
-                                </Grid.ColumnDefinitions>
+                    <TextBlock Text="Пісні" FontSize="26" Margin="30,15,0,15" Style="{StaticResource HeaderTextBlock}"/>
+                    <Grid Grid.Row="1" Margin="0,0,0,25">
+                        <ListView Height="250" ItemsSource="{Binding SongsAndSingers, Mode=TwoWay}" 
+                                              Style="{StaticResource DefaultListView}" 
+                                              SelectionMode="Single"
+                                              >
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Vertical"/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
 
-                                <Image Source="/Assets/unnamed.jpg" Style="{StaticResource DefaultImage}"/>
-                                <TextBlock Grid.Column="1" Text="All 4 nothing" Style="{StaticResource SearchedTextTextBlock}"/>
-                                <Button Grid.Column="2" Style="{StaticResource LikeButton}"/>
-                                <Button Grid.Column="3" Style="{StaticResource PlayButton}"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
 
-                            </Grid>
-                        </Button.Content>
-                    </Button>
+                                        <Button Style="{StaticResource DefaultButton}" 
+                                                    Template="{StaticResource NoMouseOverButtonTemplate}"
+                                                    Click="SongPage_Click"
+                                                    >
+                                            <Button.Content>
+                                                <Grid Width="520">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="0.34*"/>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition Width="0.15*"/>
+                                                        <ColumnDefinition Width="0.15*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Image Source="{Binding Song.Image}" Style="{StaticResource DefaultImage}"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding Song.Name}" FontSize="16" Style="{StaticResource SearchedTextTextBlock}"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+
+                                        <Button Grid.Column="1" x:Name="LikeBtn" Click="LikeBtn_Click" Style="{StaticResource LikeButton}" 
+                                            Template="{StaticResource NoMouseOverButtonTemplate}">
+                                            <Button.Content>
+                                                <Image Source="/Assets/like.png" Width="12" Height="12"/>
+                                            </Button.Content>
+                                        </Button>
+
+                                        <Button x:Name="PlayBtn" Click="PlayBtn_Click" Grid.Column="2" Style="{StaticResource PlayButton}" 
+                                            Template="{StaticResource NoMouseOverButtonTemplate}">
+                                            <Button.Content>
+                                                <Image Source="/Assets/play.png" Width="12" Height="12"/>
+                                            </Button.Content>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
                 </Grid>
-                
             </Grid>
         </ScrollViewer>
-
     </Grid>
 </UserControl>

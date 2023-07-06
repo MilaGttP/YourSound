@@ -49,6 +49,22 @@ namespace YourSound
                 return null;
             }
         }
+        public static async Task<List<Song>> GetAllSingerSongs(Singer singer)
+        {
+            try
+            {
+                using (var dbContext = new DBContext())
+                {
+                    List<Song> songs = await dbContext.Song.Where(s => s.SingerID == singer.ID).ToListAsync();
+                    return songs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
         public static async Task<SongAndSinger> GetSongSinger(Song song)
         {
             try
