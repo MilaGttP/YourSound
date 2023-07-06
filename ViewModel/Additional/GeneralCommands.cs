@@ -48,7 +48,7 @@ namespace YourSound
 
             if (searched.Song == null && searched.Singer == null)
             {
-                MessageBox.Show("Не знайдено у базі даних :(");
+                MessageBox.Show("Не знайдено у базі даних :( Але я обов'язково з часом додам цю пісню чи цього автора!");
             }
             else if (searched.Song == null)
             {
