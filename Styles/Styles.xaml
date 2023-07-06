@@ -30,7 +30,7 @@
         <Setter Property="Height" Value="32"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="8,6,0,0"/>
+        <Setter Property="Padding" Value="0,6,0,0"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="CaretBrush" Value="#FFFFFF"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>

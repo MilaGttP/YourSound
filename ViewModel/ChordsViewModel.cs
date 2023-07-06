@@ -21,6 +21,16 @@ namespace YourSound
                 OnPropertyChanged(nameof(Chords));
             }
         }
+        private Chord chord;
+        public Chord Chord
+        {
+            get { return chord; }
+            set
+            {
+                chord = value;
+                OnPropertyChanged(nameof(Chord));
+            }
+        }
         private async void GetAllChords()
         {
             Chords = await ChordOperations.GetAllChords();

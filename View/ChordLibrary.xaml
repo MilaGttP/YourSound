@@ -48,16 +48,22 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
 
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="0.3*"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
+                            <Button Style="{StaticResource DefaultButton}" 
+                                    Template="{StaticResource NoMouseOverButtonTemplate}"
+                                    Click="CurrentChordPage"
+                                    >
+                                <Button.Content>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.3*"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
 
-                                <TextBlock Text="{Binding Name}" Style="{StaticResource ChordTextBlock}"/>
-                                <Image Source="{Binding Image}" Grid.Row="1" Style="{StaticResource ChordLibraryImage}"/>
-                            </Grid>
-
+                                        <TextBlock Text="{Binding Name}" Style="{StaticResource ChordTextBlock}"/>
+                                        <Image Source="{Binding Image}" Grid.Row="1" Style="{StaticResource ChordLibraryImage}"/>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

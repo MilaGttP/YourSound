@@ -8,7 +8,8 @@ namespace YourSound
     {
         private Navigation navigation;
         private GeneralViewModel viewModel;
-        private GeneralCommands generalCommands { get; set; }
+        private GeneralCommands generalCommands;
+        private ChordsViewModel chordsViewModel;
         public ChordLibrary(Navigation navigation, GeneralViewModel generalViewModel)
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace YourSound
             this.generalCommands = new GeneralCommands(navigation, generalViewModel);
             HomeBtn.Click += generalCommands.HomeBtn_Click;
 
-            ChordsViewModel chordsViewModel = new ChordsViewModel();
+            this.chordsViewModel = new ChordsViewModel();
             DataContext = chordsViewModel;
         }
         private void SearchingTB_Enter(object sender, KeyEventArgs e)
@@ -28,6 +29,16 @@ namespace YourSound
                 e.Handled = true;
                 generalCommands.SearchingTB_Enter_Handle(SearchingTB.Text);
             }
+        }
+
+        private void CurrentChordPage(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            Chord selected = button.DataContext as Chord;
+            chordsViewModel.Chord = selected;
+
+            CurrentChord currentChord = new CurrentChord(navigation, viewModel, chordsViewModel);
+            navigation.ShowUserControl(currentChord);
         }
     }
 }

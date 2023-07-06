@@ -11,7 +11,9 @@ namespace YourSound
         private Navigation navigation;
         private SongAndSinger songAndSinger;
         private GeneralViewModel viewModel;
-        private GeneralCommands generalCommands { get; set; }
+        private GeneralCommands generalCommands;
+        private ChordsViewModel chordsViewModel;
+
         public SongPage(Navigation navigation, GeneralViewModel generalViewModel, SongAndSinger selected)
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace YourSound
 
             songAndSinger.Chords = new List<Chord>();
             viewModel = generalViewModel;
+            chordsViewModel = new ChordsViewModel();
 
             this.generalCommands = new GeneralCommands(navigation, generalViewModel);
             HomeBtn.Click += generalCommands.HomeBtn_Click;
@@ -40,8 +43,12 @@ namespace YourSound
 
         private void ChordClick(object sender, RoutedEventArgs e)
         {
-            ChordLibrary chordLibrary = new ChordLibrary(navigation, viewModel);
-            navigation.ShowUserControl(chordLibrary);
+            Button button = (Button)sender;
+            Chord selected = button.DataContext as Chord;
+            chordsViewModel.Chord = selected;
+
+            CurrentChord currentChord = new CurrentChord(navigation, viewModel, chordsViewModel);
+            navigation.ShowUserControl(currentChord);
         }
         private void SearchingTB_Enter(object sender, KeyEventArgs e)
         {

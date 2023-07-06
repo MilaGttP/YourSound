@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="YourSound.CurrentChord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:YourSound"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.08*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="HomeBtn" Grid.Row="1" Style="{StaticResource HomeButton}" Template="{StaticResource NoMouseOverButtonTemplate}"/>
+        <Border Grid.RowSpan="2" Style="{StaticResource Separator}"/>
+
+        <Grid Margin="32,0,0,0" Grid.Column="1">
+            <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
+                <TextBox x:Name="SearchingTB" Grid.Column="1" Style="{StaticResource SearchingTextBox}"
+                         AcceptsReturn="True" PreviewKeyDown="SearchingTB_Enter"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.12*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding Chord.Name}" FontSize="42" Style="{StaticResource HeaderTextBlock}"/>
+            <Grid Grid.Row="1" Margin="28,5,40,40">
+                <Image Source="{Binding Chord.Image}" Width="500" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
