@@ -1,19 +1,24 @@
 ﻿
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace YourSound
 {
     public partial class Tuner : UserControl
     {
         private Navigation navigation;
+        private GeneralViewModel viewModel;
+        private GeneralCommands generalCommands { get; set; }
         WMPLib.WindowsMediaPlayer player;
-        public Tuner(Navigation navigation)
+        public Tuner(Navigation navigation, GeneralViewModel generalViewModel)
         {
             InitializeComponent();
             this.navigation = navigation;
             player = new WMPLib.WindowsMediaPlayer();
-            GeneralCommands generalCommands = new GeneralCommands(navigation);
+            viewModel = generalViewModel;
+
+            this.generalCommands = new GeneralCommands(navigation, generalViewModel);
             HomeBtn.Click += generalCommands.HomeBtn_Click;
 
             ELowTunerBtn.Click += ELowTunerBtn_Click;
@@ -53,6 +58,14 @@ namespace YourSound
         {
             player.URL = "E4.mp3";
             player.controls.play();
+        }
+        private void SearchingTB_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                e.Handled = true;
+                generalCommands.SearchingTB_Enter_Handle(SearchingTB.Text);
+            }
         }
     }
 }

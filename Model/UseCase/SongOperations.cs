@@ -72,6 +72,25 @@ namespace YourSound
                 return null;
             }
         }
+        public static async Task<Song> GetSongByName(string name)
+        {
+            try
+            {
+                using (var dbContext = new DBContext())
+                {
+                    var song = await dbContext.Song
+                        .Where(s => s.Name.ToLower() == name.ToLower())
+                        .FirstOrDefaultAsync();
+
+                    return song;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
 
         public static async Task<List<Song>> GetTopSongs(int quantity)
         {
@@ -126,7 +145,7 @@ namespace YourSound
             using (var dbContext = new DBContext())
             {
                 int count = dbContext.Song.Count(s => s.Popularity > 0);
-                return count >= 7;
+                return count >= 8;
             }
         }
         public static async Task<List<Song>> GetLastSongs(int quantity)
@@ -202,6 +221,23 @@ namespace YourSound
                 songAndSingers = await SingerOperations.GetSongAuthorPairs(songs);
                 return songAndSingers;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+
+        public static async Task<SongAndSinger> GetObjectsForSearching(string text)
+        {
+            try
+            {
+                SongAndSinger songAndSinger = new SongAndSinger();
+                songAndSinger.Song = await GetSongByName(text);
+                songAndSinger.Singer = await SingerOperations.GetSingerByName(text);
+
+                return songAndSinger;
             }
             catch (Exception ex)
             {

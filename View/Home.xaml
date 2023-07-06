@@ -24,7 +24,8 @@
 
         <Grid Margin="32,0,0,0" Grid.Column="1">
             <Border Grid.Column="1" Style="{StaticResource GradientBorderSearching}">
-                <TextBox x:Name="Searching" Grid.Column="1" Style="{StaticResource SearchingTextBox}"/>
+                <TextBox x:Name="SearchingTB" Style="{StaticResource SearchingTextBox}" 
+                         AcceptsReturn="True" PreviewKeyDown="SearchingTB_Enter"/>
             </Border>
         </Grid>
 

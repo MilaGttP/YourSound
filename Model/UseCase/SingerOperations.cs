@@ -30,18 +30,36 @@ namespace YourSound
                 return null;
             }
         }
-        public static async Task<List<Song>> GetSingerSongs(string singerName)
+        public static async Task<Singer> GetSingerByName(string name)
         {
             try
             {
                 using (var dbContext = new DBContext())
                 {
-                    var songs = await dbContext.SingerSong
-                        .Where(ss => ss.Singer.Name == singerName)
-                        .Select(ss => ss.Song)
-                        .ToListAsync();
+                    var singer = await dbContext.Singer
+                        .Where(s => s.Name.ToLower() == name.ToLower())
+                        .FirstOrDefaultAsync();
 
-                    return songs;
+                    return singer;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка: {ex.Message}");
+                return null;
+            }
+        }
+        public static async Task<SongAndSinger> GetSongSinger(Song song)
+        {
+            try
+            {
+                SongAndSinger songAndSinger = new SongAndSinger();
+                using (var dbContext = new DBContext())
+                {
+                    Singer singer = await dbContext.Singer.FirstOrDefaultAsync(s => s.ID == song.SingerID);
+                    songAndSinger.Song = song;
+                    songAndSinger.Singer = singer;
+                    return songAndSinger;
                 }
             }
             catch (Exception ex)
