@@ -1,4 +1,5 @@
 ﻿
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,6 +10,7 @@ namespace YourSound
     {
         private Navigation navigation;
         private GeneralViewModel viewModel;
+        private string appPath, parentDirectory, soundFilePath;
         private GeneralCommands generalCommands { get; set; }
         WMPLib.WindowsMediaPlayer player;
         public Tuner(Navigation navigation, GeneralViewModel generalViewModel)
@@ -21,6 +23,9 @@ namespace YourSound
             this.generalCommands = new GeneralCommands(navigation, generalViewModel);
             HomeBtn.Click += generalCommands.HomeBtn_Click;
 
+            appPath = System.Reflection.Assembly.GetEntryAssembly().Location;
+            parentDirectory = Directory.GetParent(appPath).Parent.Parent.Parent.FullName;
+
             ELowTunerBtn.Click += ELowTunerBtn_Click;
             ATunerBtn.Click += ATunerBtn_Click;
             DTunerBtn.Click += DTunerBtn_Click;
@@ -31,32 +36,38 @@ namespace YourSound
 
         public void ELowTunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "E2.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\E2.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         public void ATunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "A.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\A.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         public void DTunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "D.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\D.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         public void GTunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "G.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\G.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         public void BTunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "B.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\B.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         public void EHighTunerBtn_Click(object sender, RoutedEventArgs e)
         {
-            player.URL = "E4.mp3";
+            soundFilePath = Path.Combine(parentDirectory, "Assets\\Sounds\\E4.mp3");
+            player.URL = soundFilePath;
             player.controls.play();
         }
         private void SearchingTB_Enter(object sender, KeyEventArgs e)
