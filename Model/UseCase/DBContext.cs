@@ -15,11 +15,7 @@ namespace YourSound
         public DbSet<ChordsSong> ChordsSong { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var builder = new ConfigurationBuilder();
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            builder.AddJsonFile("appsettings.json");
-            var config = builder.Build();
-            string connectionString = config.GetConnectionString("DefaultConnection");
+            string connectionString = "Data Source=sql.bsite.net\\MSSQL2016;User ID=milagttp_YourSound;Password=y0ur_s0und_s0ngs;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
