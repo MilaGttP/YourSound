@@ -15,7 +15,7 @@ namespace YourSound
         public DbSet<ChordsSong> ChordsSong { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data Source=sql.bsite.net\\MSSQL2016;User ID=milagttp_YourSound;Password=y0ur_s0und_s0ngs;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = "Server=sql.bsite.net\\MSSQL2016;Database=milagttp_YourSound;User Id=milagttp_YourSound;Password=yoursound_p@ssw0rd;Trusted_Connection=True;Encrypt=False;Integrated Security=False";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }

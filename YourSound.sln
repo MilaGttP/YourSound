@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourSound", "YourSound.csproj", "{473B1888-A024-4020-9A8D-13E1E8615DBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourSound", "YourSound.csproj", "{473B1888-A024-4020-9A8D-13E1E8615DBF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "YourSound_Installer", "..\YourSound_Installer\YourSound_Installer.vdproj", "{239C5FBB-BA8A-43B5-97E6-A90C28349679}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{473B1888-A024-4020-9A8D-13E1E8615DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{473B1888-A024-4020-9A8D-13E1E8615DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{473B1888-A024-4020-9A8D-13E1E8615DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239C5FBB-BA8A-43B5-97E6-A90C28349679}.Debug|Any CPU.ActiveCfg = Debug
+		{239C5FBB-BA8A-43B5-97E6-A90C28349679}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
